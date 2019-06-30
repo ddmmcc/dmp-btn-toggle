@@ -1,12 +1,12 @@
 {
-  "name": "dmp-item-toggle",
-  "main": "dmp-item-toggle.js",
-  "version": "1.0.1",
+  "name": "dmp-btn-toggle",
+  "main": "dmp-btn-toggle.js",
+  "version": "1.0.2",
   "dependencies": {
     "@polymer/polymer": "^3.0.1"
   },
   "repository": {
-    "dmp-item-toggle": "https://github.com/ddmmcc/dmp-btn-toggle.git"
+    "dmp-btn-toggle": "https://github.com/ddmmcc/dmp-btn-toggle.git"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
