@@ -69,23 +69,26 @@ class DmpBtnToggle extends PolymerElement {
         /** flag to check if button is on/off */
         selected : {
           type : Boolean,
-          reflectToAttribute: true
+          reflectToAttribute: true,
+          notify: true
         },
         /** flag to check show/hide featured selected option */
         featured : {
           type: Boolean,
-          reflectToAttribute: true          
+          reflectToAttribute: true,
         },
         /** flagh to check if button featured is on/off */
         featuredSelected : {
           type: Boolean,
           reflectToAttribute: true,
+          notify: true
         },
         /** flag to check if buttons is disabled/enabled */
         disabled : {
           type: Boolean,
           value: false,
-          reflectToAttribute: true          
+          reflectToAttribute: true,
+          notify: true
         }
     };
   }
