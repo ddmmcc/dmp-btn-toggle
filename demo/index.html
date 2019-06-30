@@ -45,5 +45,27 @@
         </template>
       </demo-snippet>
     </div>
+    <div class="vertical-section-container centered">
+      <h3>dmp-btn-toggle demo (sloted icons left an right)</h3>
+      <demo-snippet>
+        <template>
+          <style>
+            [slot]{
+              width: 10px;
+              height: 10px;
+              margin: 0 4px;
+            }
+            [slot='rightSide']{
+              transform: rotate(180deg);
+            }
+          </style>
+          <dmp-btn-toggle value='itemValue'>
+            <svg slot='leftSide' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 22h-24l12-20z"/></svg>
+            <svg slot='rightSide' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 22h-24l12-20z"/></svg>
+            Loading ...
+          </dmp-btn-toggle>
+        </template>
+      </demo-snippet>
+    </div>
   </body>
 </html>

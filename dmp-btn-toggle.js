@@ -46,7 +46,10 @@ class DmpBtnToggle extends PolymerElement {
         }  
       </style>
 
-        <div id='item' class='item' on-click='_toggleElement' >[[value]]
+        <div id='item' class='item' on-click='_toggleElement' >
+          <slot name='leftSide'></slot>
+          [[value]]
+          <slot name='rightSide'></slot>
           <template is='dom-if' if='[[featured]]'>
             <div id='itemFeatured' on-click='_toggleFeatured' class='itemFeatured' featuredSelected$='[[featuredSelected]]' ></div>
           </template>
