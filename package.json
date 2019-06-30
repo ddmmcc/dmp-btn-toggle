@@ -1,7 +1,7 @@
 {
   "name": "dmp-item-toggle",
   "main": "dmp-item-toggle.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@polymer/polymer": "^3.0.1"
   },
