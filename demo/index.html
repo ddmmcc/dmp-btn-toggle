@@ -22,18 +22,32 @@
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic dmp-btn-toggle demo Featured</h3>
-      <demo-snippet>
-        <template>
-          <dmp-btn-toggle featured value='itemValue'>Loading ...</dmp-btn-toggle>
-        </template>
-      </demo-snippet>
-    </div>
+        <h3>dmp-btn-toggle demo (Basic)</h3>
+        <demo-snippet>
+          <template>
+            <dmp-btn-toggle value='itemValue'>Loading ...</dmp-btn-toggle>
+          </template>
+        </demo-snippet>
+      </div>    
     <div class="vertical-section-container centered">
-      <h3>dmp-btn-toggle demo (Basic)</h3>
+      <h3>Basic dmp-btn-toggle demo custom Featured</h3>
       <demo-snippet>
         <template>
-          <dmp-btn-toggle value='itemValue'>Loading ...</dmp-btn-toggle>
+          <dmp-btn-toggle id='featuredIcons' featured value='itemValue'>
+            <svg slot='featured' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          </dmp-btn-toggle>
+          <dmp-btn-toggle id='featuredIcons' featured value='itemValue'>
+            <svg slot='featured' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          </dmp-btn-toggle>
+          <dmp-btn-toggle id='featuredIcons' featured value='itemValue'>
+            <svg slot='featured' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          </dmp-btn-toggle>
+          <dmp-btn-toggle id='featuredIcons' featured value='itemValue'>
+            <svg slot='featured' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          </dmp-btn-toggle>
+          <dmp-btn-toggle id='featuredIcons' featured value='itemValue'>
+            <svg slot='featured' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+          </dmp-btn-toggle>
         </template>
       </demo-snippet>
     </div>
@@ -50,7 +64,7 @@
       <demo-snippet>
         <template>
           <style>
-            [slot]{
+            #sideIcons [slot]{
               width: 10px;
               height: 10px;
               margin: 0 4px;
@@ -59,7 +73,7 @@
               transform: rotate(180deg);
             }
           </style>
-          <dmp-btn-toggle value='itemValue'>
+          <dmp-btn-toggle id='sideIcons' value='itemValue' featured>
             <svg slot='leftSide' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 22h-24l12-20z"/></svg>
             <svg slot='rightSide' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 22h-24l12-20z"/></svg>
             Loading ...

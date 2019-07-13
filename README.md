@@ -10,19 +10,39 @@
 ## Description
 
 This component is a toggle button. It change state when is clicked
+If the component has an attribute featured, and slot featured has an svg the component show a clickable icon to toggle featured-selected property.
 
-## Attributes
+## CSS Custom properties
 
-featured : default style it create a "radio-toggle" up-right angle. you can bind
 
-ownId (required) : Id of item.
+| Name | Default | Description  |
+|---|---|---|
+| --backgroundColor  | lightblue  |   |
+| --backgroundSelected  | #52b7d8  |   |
+| --featuredBackground  | lightblue  |   |
+| --featuredBackgroundSelected  | gold |   |
+| --featuredStrokeColor  | transparent  |   |
+| --featuredStrokeColorSelected  | transparent  |   |
+|   |   |   |
 
-selected : Its true when item is selected.
 
-featuredSelected : its true when featured is selected;
+## Properties
 
+| Name | Description | Flow |
+|---|---|---|
+| value | Text in the button | IN |
+| ownId | own id to use if item is in the list  | IN |
+| selected | flag to check if button is on/off | IN/OUT |
+| featured | flag to check show/hide featured selected option | IN |
+| featuredSelected | flag to check if button featured is on/off | IN/OUT |
+| disabled | flag to check if buttons is disabled/enabled | IN/OUT |
 
 ## Methods
+
+| Name | Description |
+|---|---|---|
+| checkDisabled | returns component status |
+| validation | Validate component |
 
 ## Events
 

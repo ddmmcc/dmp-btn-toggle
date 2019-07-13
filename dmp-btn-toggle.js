@@ -13,6 +13,17 @@ class DmpBtnToggle extends PolymerElement {
   static get template() {
     return html`
       <style>
+        :host{
+          --backgroundColor: lightblue;
+          --backgroundSelected: #52b7d8;
+          --featuredBackground: lightblue;
+          --featuredBackgroundSelected: gold; 
+          --featuredStrokeColor: transparent;
+          --featuredStrokeColorSelected: transparent;
+        }
+        :host([selected]){
+
+        }
         .item {
             position: relative;
             cursor: pointer;
@@ -26,24 +37,59 @@ class DmpBtnToggle extends PolymerElement {
             background-color : var(--backgroundColor, #f4b400);
         }
         .itemFeatured{
+          /*
           width: 10px;
           height: 10px;
           border-radius: 50%;
           border: 2px solid black;
+          */
+          pointer-events: none;
           position: absolute;
           top: -6px;
           right: -6px;
+          cursor: not-allowed !important;
+        }
+        :host([selected]) .itemFeatured{
+          cursor: pointer !important;
+          pointer-events: auto;
         }
         :host([selected]) .item {
-          background: var(--backgroundSelected, #3367d6);
+          background-color: var(--backgroundSelected, #3367d6);
         }
         :host([disabled]) .item {
           background: var(--backBroundDisable, #e0e0e0);
           cursor: not-allowed !important;
         }
+        /*
         :host([featured-selected]) .itemFeatured{
           background: var(--backgroundFeatured, #ef5350);
         }  
+        */
+        .itemFeatured slot::slotted(svg) {
+          fill: var(--featuredBackground, var(--backgroundSelected,  gold));
+          opacity: 0.3;
+          stroke: var(--featuredStrokeColor, red);
+          width: 20px;
+          height: 20px;
+          transform: rotate(45deg);
+
+
+        }
+        :host([selected]) .itemFeatured slot::slotted(svg) {
+          opacity: unset;
+        }
+        :host([featured-selected]) .itemFeatured slot::slotted(svg){
+          fill: var(--featuredBackgroundSelected,  #3367d6);
+          stroke: var(--featuredStrokeColorSelected);
+        }
+
+        .itemFeatured slot::slotted(div) {
+          fill: red;
+          stroke-width: 2px;
+          stroke:green;
+          width: 24px;
+          height: 24px;
+        }
       </style>
 
         <div id='item' class='item' on-click='_toggleElement' >
@@ -51,7 +97,9 @@ class DmpBtnToggle extends PolymerElement {
           [[value]]
           <slot name='rightSide'></slot>
           <template is='dom-if' if='[[featured]]'>
-            <div id='itemFeatured' on-click='_toggleFeatured' class='itemFeatured' featuredSelected$='[[featuredSelected]]' ></div>
+            <div id='itemFeatured' on-click='_toggleFeatured' class='itemFeatured' featured-selected$='[[featuredSelected]]' >
+              <slot name='featured'></slot>
+            </div>
           </template>
         </div>
       `;
@@ -77,7 +125,7 @@ class DmpBtnToggle extends PolymerElement {
           type: Boolean,
           reflectToAttribute: true,
         },
-        /** flagh to check if button featured is on/off */
+        /** flag to check if button featured is on/off */
         featuredSelected : {
           type: Boolean,
           reflectToAttribute: true,
@@ -96,7 +144,6 @@ class DmpBtnToggle extends PolymerElement {
   ready() {
     super.ready();
     this.validation();
-    this.listeners(); 
   }
   
   checkDisabled() {
