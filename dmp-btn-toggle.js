@@ -21,9 +21,6 @@ class DmpBtnToggle extends PolymerElement {
           --featuredStrokeColor: transparent;
           --featuredStrokeColorSelected: transparent;
         }
-        :host([selected]){
-
-        }
         .item {
             position: relative;
             cursor: pointer;
